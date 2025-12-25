@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO アプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TODO アプリ</h1>
+        </header>
+
+        <div class="add-todo-section">
+            <h2>新しいTODOを追加</h2>
+            <form id="todo-form">
+                <div class="form-group">
+                    <label for="todo-title">タイトル</label>
+                    <input type="text" id="todo-title" placeholder="TODOを入力..." required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="todo-priority">優先度</label>
+                        <select id="todo-priority">
+                            <option value="low">低</option>
+                            <option value="medium" selected>中</option>
+                            <option value="high">高</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="todo-deadline">期限</label>
+                        <input type="date" id="todo-deadline">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">追加</button>
+            </form>
+        </div>
+
+        <div class="filter-section">
+            <button class="filter-btn active" data-filter="all">すべて</button>
+            <button class="filter-btn" data-filter="active">未完了</button>
+            <button class="filter-btn" data-filter="completed">完了</button>
+        </div>
+
+        <div class="todos-section">
+            <h2>TODOリスト</h2>
+            <ul id="todo-list" class="todo-list">
+                <!-- TODOアイテムがここに表示されます -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- 編集モーダル -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <h2>TODOを編集</h2>
+            <form id="edit-form">
+                <div class="form-group">
+                    <label for="edit-title">タイトル</label>
+                    <input type="text" id="edit-title" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-priority">優先度</label>
+                        <select id="edit-priority">
+                            <option value="low">低</option>
+                            <option value="medium">中</option>
+                            <option value="high">高</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-deadline">期限</label>
+                        <input type="date" id="edit-deadline">
+                    </div>
+                </div>
+
+                <div class="modal-buttons">
+                    <button type="submit" class="btn btn-primary">保存</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-edit">キャンセル</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
